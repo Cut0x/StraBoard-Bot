@@ -23,5 +23,8 @@ module.export = {
 [3] /setstarnumber <numéro>
 ```
 
+# Rendu :
+![image](https://user-images.githubusercontent.com/71967731/140596850-c5a4f68f-b2d4-474d-815f-44127c882ce0.png)
+
 # Version et autre
 La version de ce projet/template est en v13 de **discord.js** !
