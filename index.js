@@ -20,9 +20,11 @@ client.once("ready", () => {
         module.exports = require("./Data/Action/SlashCmds").SlashLoad(client, guilds);
         
         console.log(`-> "${guilds.name}" chargé !`);
-
-        console.log("[LOADED] Connecté sur " + client.user.username + "#" + client.user.discriminator + ".");
     });
+
+    setTimeout(() => {
+        console.log("[LOADED] Connecté sur " + client.user.username + "#" + client.user.discriminator + ".");
+    }, 2000)
 });
 
 client.login(token);
