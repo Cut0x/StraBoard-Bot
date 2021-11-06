@@ -15,3 +15,13 @@ module.export = {
   //prefix: "!"
 }
 ```
+
+# Les commandes (A faire dans l'ordre !)
+```css
+[1] /setstar
+[2] /setstarchannel <le salon>
+[3] /setstarnumber <numéro>
+```
+
+# Version et autre
+La version de ce projet/template est en v13 de **discord.js** !
