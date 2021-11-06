@@ -27,6 +27,10 @@ client.once("ready", () => {
     }, 2000)
 });
 
+client.on("guildCreate", async guild => {
+    module.exports = require("./Data/Action/SlashCreateCmds").SlashCreateCmds(client, guild);
+});
+
 client.login(token);
 
 module.exports = require("./Data/Action/LoadCmds").LoadCmd(client);
