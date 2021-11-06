@@ -11,7 +11,7 @@ const client = new Client({
 });
 
 const db = require("quick.db");
-const { prefix, token } = require("./Data/config");
+const { /*prefix,*/ token } = require("./Data/config");
 
 client.once("ready", () => {
     console.log("[LOADING] Conexions en cours !");
