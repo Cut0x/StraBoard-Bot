@@ -28,3 +28,4 @@ module.export = {
 
 # Version et autre
 La version de ce projet/template est en v13 de **discord.js** !
+*Pas compatible avec les versions précédente !*
