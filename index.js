@@ -44,7 +44,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
         if (reaction.emoji.name === "⭐") {
             db.add(`starboard_${reaction.message.guild.id}_message_${reaction.message.id}`, 1)
 
-            if (db.get(`starboard_${reaction.message.guild.id}_message_${reaction.message.id}`) >= db.get(`starboard_${reaction.message.guild.id}_limite`)) {
+            if (db.get(`starboard_${reaction.message.guild.id}_message_${reaction.message.id}`) >= db.get(`starboard_${reaction.message.guild.id}_limite`) ?? 5) {
                 const LogsStar = client.guilds.cache.get(reaction.message.guild.id).channels.cache.get(db.get(`starboard_${reaction.message.guild.id}_channel`));
 
                 const embed = new MessageEmbed()
