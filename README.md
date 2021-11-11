@@ -18,9 +18,10 @@ module.export = {
 
 # Les commandes (A faire dans l'ordre !)
 ```css
-[1] /setstar
-[2] /setstarchannel <le salon>
-[3] /setstarnumber <numéro>
+[1] /help
+[2] /setstar
+[3] /setstarchannel <le salon>
+[4] /setstarnumber <numéro>
 ```
 La limite par défaut est 5.
 
