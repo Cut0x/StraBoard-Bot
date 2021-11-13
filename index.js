@@ -47,6 +47,8 @@ client.on("messageReactionAdd", async (reaction, user) => {
             if (db.get(`starboard_${reaction.message.guild.id}_message_${reaction.message.id}`) >= db.get(`starboard_${reaction.message.guild.id}_limite`) ?? 5) {
                 const LogsStar = client.guilds.cache.get(reaction.message.guild.id).channels.cache.get(db.get(`starboard_${reaction.message.guild.id}_channel`));
 
+                if (!LogsStar) return,
+                
                 const embed = new MessageEmbed()
                     .setColor("#2f3136")
                     .setAuthor(`${reaction.message.author.tag}`, reaction.message.author.avatarURL({ dynamic: true }))
@@ -71,14 +73,18 @@ client.on("messageReactionAdd", async (reaction, user) => {
                         idChnl: msg.channel.id
                     })
                 } else {
-                    client.channels.cache.get(db.get(`starboard_send_${reaction.message.id}.idChnl`)).messages.fetch(db.get(`starboard_send_${reaction.message.id}.idMsg`)).then(async message => {
-                        message.edit({
-                            content: `:star:${db.get(`starboard_${reaction.message.guild.id}_message_${reaction.message.id}`)} ${reaction.message.channel}`,
-                            embeds: [
-                                embed
-                            ]
+                    try {
+                        client.channels.cache.get(db.get(`starboard_send_${reaction.message.id}.idChnl`)).messages.fetch(db.get(`starboard_send_${reaction.message.id}.idMsg`)).then(async message => {
+                            message.edit({
+                                content: `:star:${db.get(`starboard_${reaction.message.guild.id}_message_${reaction.message.id}`)} ${reaction.message.channel}`,
+                                embeds: [
+                                    embed
+                                ]
+                            })
                         })
-                    })
+                    } catch(error) {
+                        //console.log("Une erreur est survenue.")
+                    }
                 }
             }
         }
