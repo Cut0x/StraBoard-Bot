@@ -3,7 +3,7 @@ Template d'un bot pour faire un starboard
 
 # Modules obligatoire
 ```
-npm install --save discord.js @discordjs/rest discord-api-types quick.db
+npm install --save discord.js @discordjs/rest discord-api-types @discordjs/builders quick.db
 ```
 
 # Config -> `./Data/exmple.config.js`
